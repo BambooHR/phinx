@@ -257,6 +257,9 @@ class Manager
 	} finally {
 	    if ($env->getAdapter() !== null) {
 		    $env->getAdapter()->disconnect();
+	    } else {
+	    	echo "couldn't disconnect. Exiting to avoid eating up connections.";
+	    	exit();
 	    }
 	}
     }
